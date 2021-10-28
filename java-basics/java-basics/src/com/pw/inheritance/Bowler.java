@@ -1,5 +1,7 @@
 package com.pw.inheritance;
 
+import java.io.IOException;
+
 public class Bowler extends Player {
 
 	private double economy;
@@ -13,7 +15,7 @@ public class Bowler extends Player {
 	
 	
 	@Override
-	public void showPlayerDetails() {
+	public void showPlayerDetails() throws RuntimeException{
 		
 		System.out.println("Bowler class is not completed");
 	}
