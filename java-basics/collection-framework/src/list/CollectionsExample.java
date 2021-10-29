@@ -26,10 +26,11 @@ public class CollectionsExample {
 		items.add(2.5);
 		
 		
-		for(Object item:items) {
-			System.out.println(item);
-		}
+//		for(Object item:items) {
+//			System.out.println(item);
+//		}
 		
+		items.forEach(System.out::println);
 		
 
 	}
