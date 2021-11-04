@@ -13,7 +13,7 @@ import com.empmgmnt.app.model.Employee;
 public class EmployeeServiceImpl implements EmployeeService {
 
 	@Autowired
-	@Qualifier("empHashMapDao")
+	@Qualifier("empJdbcDao")
 	private EmployeeDao dao;
 	
 	

@@ -19,39 +19,45 @@ public class App
         
     	ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
     	
+    	
+    	
     	AppUi uiObj=context.getBean("appUi", AppUi.class);
+//    	
+//    	AppUi uiObj2=context.getBean("appUi", AppUi.class);
+//    	
+//    	AppUi uiObj3=context.getBean("appUi", AppUi.class);
+//    	
+//    	Scanner scanner =new Scanner(System.in);
     	
-    	Scanner scanner =new Scanner(System.in);
-    	
-    	while(true) {
-    		
-    		System.out.println("Enter an Option \n 1 - Add Employee \n 2 - Search Employee \n 0 - Exit");
-    		
-    		int option= scanner.nextInt();
-    		System.out.println();
-    		
-    		switch (option) {
-			case 1:
-				uiObj.addEmployee();
-				break;
-			case 2:
-				uiObj.searchEmployee();
-				break;
-				
-			case 0:
-				System.exit(1);
-				break;
-
-			default:
-				System.out.println("Invalid Option");
-				break;
-			}
-    		
-    		System.out.println("\n");
-    		
-    		
-    		
-    	}
+//    	while(true) {
+//    		
+//    		System.out.println("Enter an Option \n 1 - Add Employee \n 2 - Search Employee \n 0 - Exit");
+//    		
+//    		int option= scanner.nextInt();
+//    		System.out.println();
+//    		
+//    		switch (option) {
+//			case 1:
+//				uiObj.addEmployee();
+//				break;
+//			case 2:
+//				uiObj.searchEmployee();
+//				break;
+//				
+//			case 0:
+//				System.exit(1);
+//				break;
+//
+//			default:
+//				System.out.println("Invalid Option");
+//				break;
+//			}
+//    		
+//    		System.out.println("\n");
+//    		
+//    		
+//    		
+//    	}
     	
     	
     }

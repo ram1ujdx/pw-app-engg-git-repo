@@ -9,21 +9,30 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.empmgmnt.app.model.Employee;
 
 @Component("empJdbcDao")
-public class EmployeeDaoJdbcImpl implements EmployeeDao{
+public class EmployeeDaoJdbcImpl implements EmployeeDao, InitializingBean, DisposableBean{
 
 	@Autowired
+	DbUtils dbUtils;
+	
 	private Connection conn;
 	
 	private PreparedStatement psmt;
 	
 	
 	
+	@Override
+	public void afterPropertiesSet() throws Exception {
+		conn= dbUtils.getDbConnection();
+		System.out.println("Connection Initialized..");
+	}
 	
 
 	@Override
@@ -136,6 +145,13 @@ public class EmployeeDaoJdbcImpl implements EmployeeDao{
 			employeeList.add(employee);
 		}
 		return employeeList;
+		
+	}
+	
+	@Override
+	public void destroy() throws Exception {
+		
+		System.out.println("Bean Destroyed..");
 		
 	}
 

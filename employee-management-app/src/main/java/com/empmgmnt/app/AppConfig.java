@@ -8,6 +8,7 @@ import java.util.Scanner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
 import com.empmgmnt.app.dao.EmployeeDaoJdbcImpl;
 import com.empmgmnt.app.service.EmployeeServiceImpl;
@@ -15,6 +16,7 @@ import com.empmgmnt.app.ui.AppUi;
 
 @Configuration
 @ComponentScan(basePackages = {"com.empmgmnt.app"})
+@PropertySource("app.properties")
 public class AppConfig {
 
 	@Bean(name = "dbConnection")

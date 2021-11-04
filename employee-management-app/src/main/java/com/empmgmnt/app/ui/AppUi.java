@@ -4,6 +4,8 @@ import java.time.LocalDate;
 import java.util.Scanner;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import com.empmgmnt.app.model.Employee;
@@ -11,6 +13,8 @@ import com.empmgmnt.app.service.EmployeeService;
 import com.empmgmnt.app.service.EmployeeServiceImpl;
 
 @Component
+@Scope("singleton")
+@Lazy
 public class AppUi {
 
 	private Scanner scanner=new Scanner(System.in);
@@ -20,7 +24,7 @@ public class AppUi {
 	
 
 	public AppUi() {
-		
+		System.out.println("App UI Object Created..");
 	}
 	
 	public void addEmployee() {
